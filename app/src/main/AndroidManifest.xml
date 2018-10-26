@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.thanh.appbabytraining">
 
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,13 +13,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".intenservice.Main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
 
+        <receiver android:name=".intenservice.AlarmReceiver" />
+
+        <service android:name=".intenservice.AlarmNotificationService" />
+        <service android:name=".intenservice.AlarmSoundService" />
+        <service
+            android:name=".alarmsevice.MyService"
+            android:exported="false" />
+
+        <activity android:name=".intenservice.ExampleActivity" />
+
+        <!-- auto start -->
+        <service
+            android:name=".autostart.YourService"
+            android:enabled="true"
+            android:process=":your_service" />
+
+        <receiver android:process=":remote" android:name=".autostart.Alarm"></receiver>
+        <receiver android:process=":remote" android:name=".intenservice.Alarm"></receiver>
+
+    </application>
 </manifest>
