@@ -177,10 +177,9 @@ public class Main extends AppCompatActivity {
 
             AlarmNotificationService.BoundService BoundService = (AlarmNotificationService.BoundService) iBinder;
             alarmNotificationService = BoundService.getService();
+           // alarmNotificationService.sendNotification("the gioi cua thanh ...");
+            //Utils.messageDisplay("start service by activity ... : \n tine : " + alarmNotificationService.show() + "\n");
 
-            alarmNotificationService.sendNotification("the gioi cua thanh ...");
-
-            Utils.messageDisplay("start service by activity ... : \n tine : " + alarmNotificationService.show() + "\n");
         }
 
         @Override
@@ -192,7 +191,7 @@ public class Main extends AppCompatActivity {
 
 
     //get time interval to trigger alarm manager
-    private int getTimeInterval(String getInterval) {
+   /* private int getTimeInterval(String getInterval) {
         int interval = Integer.parseInt(getInterval);//convert string interval into integer
         //Return interval on basis of radio button selection
         if (secondsRadioButton.isChecked())
@@ -202,10 +201,10 @@ public class Main extends AppCompatActivity {
         if (hoursRadioButton.isChecked()) return interval * 60 * 60;//convert hours into seconds
         //else return 0
         return 0;
-    }
+    }*/
 
     //Trigger alarm manager with entered time interval
-    public void triggerAlarmManager(int alarmTriggerTime, PendingIntent pendingIntent) {
+   /* public void triggerAlarmManager(int alarmTriggerTime, PendingIntent pendingIntent) {
         // get a Calendar object with current time
         Calendar cal = Calendar.getInstance();
 
@@ -216,12 +215,10 @@ public class Main extends AppCompatActivity {
 
         manager.set(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), pendingIntent);//set alarm manager with entered timer by converting into milliseconds
 
-
         // Utils.messageDisplay("time : "+);
         Toast.makeText(this, "Alarm Set for " + alarmTriggerTime + " seconds.", Toast.LENGTH_SHORT).show();
 
-
-    }
+    }*/
 
 
     //Stop/Cancel alarm manager

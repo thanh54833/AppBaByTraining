@@ -21,7 +21,6 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".intenservice.AlarmReceiver" />
 
         <service android:name=".intenservice.AlarmNotificationService" />
         <service android:name=".intenservice.AlarmSoundService" />

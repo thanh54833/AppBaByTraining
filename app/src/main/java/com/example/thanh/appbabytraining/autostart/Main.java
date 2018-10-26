@@ -17,7 +17,6 @@ public class Main extends AppCompatActivity {
         alarm.setAlarm(getApplicationContext());*/
         Intent intent=new Intent(this,YourService.class);
 
-
         startService(intent);
 
     }

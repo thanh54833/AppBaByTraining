@@ -23,8 +23,8 @@ public class Alarm extends BroadcastReceiver
         // Put here YOUR code.
         Toast.makeText(context, "Alarm !!!!!!!!!!", Toast.LENGTH_LONG).show(); // For example
         wl.release();
-    }
 
+    }
     public void setAlarm(Context context)
     {
         AlarmManager am =( AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
@@ -34,7 +34,6 @@ public class Alarm extends BroadcastReceiver
 
         Utils.messageDisplay("start alram ...");
     }
-
     public void cancelAlarm(Context context)
     {
         Intent intent = new Intent(context, Alarm.class);
