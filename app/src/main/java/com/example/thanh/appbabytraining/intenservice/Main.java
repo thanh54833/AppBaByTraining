@@ -237,4 +237,5 @@ public class Main extends AppCompatActivity {
 
         Toast.makeText(this, "Alarm Canceled/Stop by User.", Toast.LENGTH_SHORT).show();
     }*/
+
 }

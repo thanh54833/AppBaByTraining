@@ -37,16 +37,14 @@ public class Alarm extends BroadcastReceiver
 
 
 
-    public void setAlarm(Context context,long time)
+    public void setAlarm(Context context,long current,long time)
     {
 
         AlarmManager am =( AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
         Intent i = new Intent(context, Alarm.class);
         PendingIntent pi = PendingIntent.getBroadcast(context, 113, i, 0);
 
-        long totalTime=System.currentTimeMillis()+1000;
-
-        am.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), 1000, pi);
+        am.setRepeating(AlarmManager.RTC_WAKEUP, current, time, pi);
         //am.set
 
         Utils.messageDisplay("time: start alram ..");
