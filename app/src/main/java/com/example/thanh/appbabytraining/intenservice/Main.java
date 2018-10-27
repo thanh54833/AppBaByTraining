@@ -59,15 +59,16 @@ public class Main extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_inten_service);
+        setContentView(R.layout.activity_example);
+
 
         //Find id of all radio buttons
-        secondsRadioButton = (RadioButton) findViewById(R.id.seconds_radio_button);
-        minutesRadioButton = (RadioButton) findViewById(R.id.minutes_radio_button);
-        hoursRadioButton = (RadioButton) findViewById(R.id.hours_radio_button);
+        //secondsRadioButton = (RadioButton) findViewById(R.id.seconds_radio_button);
+        // minutesRadioButton = (RadioButton) findViewById(R.id.minutes_radio_button);
+        //hoursRadioButton = (RadioButton) findViewById(R.id.hours_radio_button);
 
 
-        final EditText editText = (EditText) findViewById(R.id.input_interval_time);
+        // final EditText editText = (EditText) findViewById(R.id.input_interval_time);
 
         /*findViewById(R.id.start_alarm_button).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -153,10 +154,72 @@ public class Main extends AppCompatActivity {
         PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), ALARM_REQUEST_CODE, alarmIntent, 0);
         triggerAlarmManager(getTimeInterval(String.valueOf(0)), pendingIntent);*/
 
-        Utils.messageDisplay("start panding intent ...");
-        onStartServiceAlarm();
+        //notes ....
+        //Utils.messageDisplay("start panding intent ...");
+        //onStartServiceAlarm();
+
+        Button button_cancle = findViewById(R.id.btn_click_cancle);
+        Button button_start = findViewById(R.id.btn_click_start);
+
+
+        button_start.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getApplicationContext(), ExampleService.class);
+                
+                startService(intent);
+
+                bindService(intent, serviceConnection, BIND_AUTO_CREATE);
+                Utils.messageDisplay("start service ...");
+            }
+        });
+
+        button_cancle.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                exampleService.cancelAlarm();
+                Utils.messageDisplay("cancel alram activity...");
+            }
+        });
 
     }
+
+    public void onClick(View view){
+        switch (view.getId()){
+            case R.id.btn_click_start_mot:
+                Toast.makeText(getApplicationContext(),"start on click...",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.btn_click_cancle_mot:
+                Toast.makeText(getApplicationContext(),"cancel on click",Toast.LENGTH_SHORT).show();
+                break;
+        }
+    }
+
+
+    private ExampleService exampleService;
+    ServiceConnection serviceConnection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+
+           /* AlarmNotificationService.BoundService BoundService = (AlarmNotificationService.BoundService) iBinder;
+            alarmNotificationService = BoundService.getService();*/
+            // alarmNotificationService.sendNotification("the gioi cua thanh ...");
+            //Utils.messageDisplay("start service by activity ... : \n tine : " + alarmNotificationService.show() + "\n");
+
+            ExampleService.BoundService boundService = (ExampleService.BoundService) iBinder;
+            exampleService = boundService.getService();
+
+            Utils.messageDisplay("service connection ... : " + exampleService.show());
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName componentName) {
+            Utils.messageDisplay("stop service by activity ...");
+        }
+    };
+
 
     private void onStartServiceAlarm() {
 
@@ -167,27 +230,7 @@ public class Main extends AppCompatActivity {
         startService(intent);
 
         bindService(intent, serviceConnection, BIND_AUTO_CREATE);
-
     }
-
-
-    ServiceConnection serviceConnection = new ServiceConnection() {
-        @Override
-        public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-
-            AlarmNotificationService.BoundService BoundService = (AlarmNotificationService.BoundService) iBinder;
-            alarmNotificationService = BoundService.getService();
-           // alarmNotificationService.sendNotification("the gioi cua thanh ...");
-            //Utils.messageDisplay("start service by activity ... : \n tine : " + alarmNotificationService.show() + "\n");
-
-        }
-
-        @Override
-        public void onServiceDisconnected(ComponentName componentName) {
-
-            Utils.messageDisplay("stop service by activity ...");
-        }
-    };
 
 
     //get time interval to trigger alarm manager
@@ -222,7 +265,7 @@ public class Main extends AppCompatActivity {
 
 
     //Stop/Cancel alarm manager
-    /*public void stopAlarmManager() {
+   /* public void stopAlarmManager() {
 
         AlarmManager manager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 

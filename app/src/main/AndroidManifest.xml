@@ -21,14 +21,20 @@
             </intent-filter>
         </activity>
 
-
         <service android:name=".intenservice.AlarmNotificationService" />
+
+
         <service android:name=".intenservice.AlarmSoundService" />
+
+        <service android:name=".intenservice.ExampleService"/>
+
         <service
             android:name=".alarmsevice.MyService"
             android:exported="false" />
 
         <activity android:name=".intenservice.ExampleActivity" />
+
+
 
         <!-- auto start -->
         <service
@@ -36,8 +42,14 @@
             android:enabled="true"
             android:process=":your_service" />
 
-        <receiver android:process=":remote" android:name=".autostart.Alarm"></receiver>
-        <receiver android:process=":remote" android:name=".intenservice.Alarm"></receiver>
+        <receiver
+            android:name=".autostart.Alarm"
+            android:process=":remote" />
+        <receiver
+            android:name=".intenservice.Alarm"
+            android:process=":remote" />
+
 
     </application>
+
 </manifest>
