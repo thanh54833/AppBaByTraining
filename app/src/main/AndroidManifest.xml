@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".intenservice.Main">
+        <activity android:name=".main.Main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,19 +22,13 @@
         </activity>
 
         <service android:name=".intenservice.AlarmNotificationService" />
-
-
         <service android:name=".intenservice.AlarmSoundService" />
-
-        <service android:name=".intenservice.ExampleService"/>
-
+        <service android:name=".intenservice.ExampleService" />
         <service
             android:name=".alarmsevice.MyService"
             android:exported="false" />
 
         <activity android:name=".intenservice.ExampleActivity" />
-
-
 
         <!-- auto start -->
         <service
