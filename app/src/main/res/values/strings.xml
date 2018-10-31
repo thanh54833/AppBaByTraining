@@ -15,5 +15,13 @@
     <string name="seconds">Seconds</string>
     <string name="label">Select your Alarm input type from below:</string>
 
+    <!-- by Alarm ... -->
+    <string name="TIME">TIME</string>
+    <string name="ID">ID</string>
+
+    <!--music alram -->
+    <string name="music_alram">com.example.thanh.appbabytraining.main.view.music_alram</string>
+    <string name="music_vibrate">com.example.thanh.appbabytraining.main.view.music_vibrate</string>
+    <string name="music_volume">com.example.thanh.appbabytraining.main.view.music_volume</string>
 
 </resources>

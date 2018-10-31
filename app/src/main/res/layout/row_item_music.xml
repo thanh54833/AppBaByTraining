@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="#00000000"
+    android:padding="10dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Item text"
+        android:layout_margin="15dp"
+        android:textColor="#fff"
+        android:textSize="16dp"
+        android:layout_gravity="center|left"
+        android:id="@+id/txt_name"
+        />
+    <Button
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@drawable/uncheck"
+        android:layout_gravity="right"
+        android:gravity="center"
+        android:id="@+id/btn_check"
+        />
+
+</FrameLayout>

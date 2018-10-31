@@ -25,12 +25,9 @@ import static java.lang.Thread.sleep;
 public class ExampleService extends Service {
 
     private  boolean RESULT = true;
-
-
     private int TIME = 1;
     private boolean CANCEL_TIME = true;
     private IBinder iBinder = new BoundService();
-
     private Alarm alarm;
 
 

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/btn_white"
+    android:padding="10dp">
+      <ImageView
+       android:layout_width="65dp"
+       android:layout_height="65dp"
+       android:layout_gravity="center|left"
+       android:id="@+id/iv_Child"
+       />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name text"
+        android:layout_gravity="center|left"
+        android:textColor="#000"
+        android:layout_marginLeft="80dp"
+        android:textSize="16dp"
+        android:id="@+id/tv_name"
+        />
+    <Button
+        android:id="@+id/btn_delete"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center|right"
+        android:background="#00000000"
+        android:text="Delete"
+        android:textAllCaps="false"
+        android:textColor="#b20000"
+        android:textSize="14dp" />
+</FrameLayout>

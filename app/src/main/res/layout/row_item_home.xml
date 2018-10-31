@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -10,17 +11,18 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_gravity="center|left"
-        android:background="#7123"
-        android:orientation="horizontal">
+        android:background="@drawable/btn_white"
+        android:orientation="horizontal"
+        android:id="@+id/lay_item"
+        >
 
         <ImageView
             android:id="@+id/img_flag"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
             android:layout_gravity="center|top"
             android:layout_margin="10dp"
-            android:background="@mipmap/ic_launcher" />
-
+            android:background="@drawable/btn_circle_on" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -34,14 +36,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
-                android:text="Word" />
+                android:text="Word"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                />
 
             <TextView
                 android:id="@+id/txt_decription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
-                android:text="decription" />
+                android:text="decription"
+                android:textSize="14dp"
+                android:textColor="#50000000"
+                />
 
         </LinearLayout>
 
@@ -56,24 +65,26 @@
 
         <Button
             android:id="@+id/btn_icon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
             android:layout_margin="5dp"
-            android:background="@drawable/ic_launcher_foreground" />
+            android:background="@drawable/house_roof" />
 
         <Button
             android:id="@+id/btn_time"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_margin="5dp"
-            android:background="@drawable/ic_launcher_foreground" />
+            android:background="@drawable/time_ic" />
 
         <TextView
             android:id="@+id/txt_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:text="00:01 min" />
+            android:text="00:01:00 min"
+            android:textColor="@color/colorBlue"
+            />
 
     </LinearLayout>
 

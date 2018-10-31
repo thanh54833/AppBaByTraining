@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main.view.ActivityPassenger"
+    android:background="@drawable/bg_passenger_manager"
+   android:orientation="vertical"
+
+    >
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center|top"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Passenger Manager"
+            android:textColor="#FFF"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="12dp"
+            android:layout_height="22dp"
+            android:layout_gravity="left|center"
+            android:layout_margin="10dp"
+            android:background="@drawable/back_ic"
+            android:onClick="onClickSetting"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            tools:ignore="OnClick" />
+    </FrameLayout>
+
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="#00000000"
+            android:dividerHeight="2dp"
+            android:clipToPadding="false"
+            android:paddingTop="2dp"
+            />
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center|bottom"
+            android:background="@drawable/button_add_blue"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:onClick="onClickPassenger"
+            tools:ignore="OnClick"
+            android:id="@+id/btn_add_item"
+            />
+    </FrameLayout>
+
+
+</LinearLayout>

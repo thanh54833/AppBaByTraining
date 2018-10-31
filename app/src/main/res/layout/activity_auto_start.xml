@@ -6,4 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".autostart.Main">
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="#00000000"
+            android:dividerHeight="5dp"
+            />
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center|bottom"
+            android:background="@drawable/button_add_blue"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            />
+    </FrameLayout>
+
 </android.support.constraint.ConstraintLayout>
