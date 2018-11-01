@@ -7,4 +7,5 @@
     <color name="colorBlue">#ff0084ff</color>
     <color name="colorYellow">#ffffaa53</color>
     <color name="colorRed">#b20000</color>
+    <color name="colorWhite">#fff</color>
 </resources>

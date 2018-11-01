@@ -6,7 +6,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-
     <!-- add by camera -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -18,14 +17,20 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+
+        android:hardwareAccelerated="false"
+        android:largeHeap="true"
+
         android:theme="@style/AppTheme">
-        <activity android:name=".camera.MainActivity">
+        <activity android:name=".camera.ActivityCamera">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".camera.Activity_Select_Image"></activity>
 
         <service android:name=".intenservice.AlarmNotificationService" />
         <service android:name=".intenservice.AlarmSoundService" />
@@ -55,6 +60,7 @@
             android:process=":remote" />
 
         <service android:name=".main.service.AlarmSoundService" />
+
         <activity android:name=".main.view.ActivityAlarm" />
 
     </application>
